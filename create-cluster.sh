@@ -1,6 +1,7 @@
 #!/bin/bash
-
+set -a
 source variable.env
+set +a
 envsubst < cluster.yaml.template > cluster.yaml
 eksctl create cluster -f cluster.yaml --without-nodegroup
 
