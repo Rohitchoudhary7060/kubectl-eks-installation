@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: ${CLUSTER_NAME}
+  region: ${AWS_REGION}
+
+vpc:
+  id: ${VPC_ID}
+
+  subnets:
+    public:
+      ${AZ1}:
+        id: ${PUBLIC_SUBNET_1}
+      ${AZ2}:
+        id: ${PUBLIC_SUBNET_2}
+      
